@@ -1,0 +1,34 @@
+{% extends "Ami/base.html" %}
+{% block header_content %}
+  <div class="container login-form header-div">
+    <form action="index.html" method="post">
+      <h2>Create Your Account</h2>
+      <h3>Enter a username and password of your choice.</h3>
+      <br>
+      <div class="container form-field">
+        <span class="input-item">
+           <i class="glyphicon glyphicon-user"></i>
+         </span>
+        <input class="field" id="txt-input" type="text" placeholder="Create UserName" required>
+      </div>
+      <br>
+      <div class="container form-field">
+        <span class="input-item">
+          <i class="glyphicon glyphicon-lock"></i>
+        </span>
+        <input class="field" type="password" placeholder="Password" id="pwd"  name="password" required>
+      </div>
+      <br>
+      <div class="container form-field">
+        <span class="input-item">
+          <i class="glyphicon glyphicon-lock"></i>
+        </span>
+        <input class="field" type="password" placeholder="Re-Enter Password" id="pwd"  name="password" required>
+      </div>
+      <br>
+      <div class="container form-field">
+        <input type="submit" class="btn button1" value="Sign Up">
+      </div>
+    </form>
+  </div>
+{% endblock %}

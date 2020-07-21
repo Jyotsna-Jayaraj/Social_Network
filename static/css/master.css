@@ -1,0 +1,44 @@
+body {
+  background-color: rgb(199, 200, 190);
+}
+form h2 {
+  font-family: 'Grenze Gotisch', cursive;
+}
+#header {
+  background-image: url("images/header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: auto;
+  background-size: cover;
+  color: rgb(199, 200, 190);
+}
+.header-div {
+  width: 50%;
+  float: right;
+}
+.mynav {
+  font-size: 20px;
+}
+#navbar *{
+  color: rgb(14, 32, 55);
+  font-family: 'Grenze Gotisch';
+}
+input.field {
+  width: 250px;
+  padding: 5px 5px;
+  margin: 8px 0;
+  color: rgb(14, 32, 55);
+}
+.input-item {
+  font-size: 25px;
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+.glyphicon {
+  top: 10px;
+}
+.button1 {
+  background-color: rgb(199, 200, 190);
+  color: rgb(14, 32, 55);
+}
