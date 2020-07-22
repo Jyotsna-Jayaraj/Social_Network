@@ -1,7 +1,8 @@
 {% extends "Ami/base.html" %}
 {% block header_content %}
   <div class="container login-form header-div">
-    <form action="index.html" method="post">
+    <form action="{% url 'login' %}" method="post">
+      {% csrf_token %}
       <h2>Login</h2>
       <h3>Welcome back! Login to access your account.</h3>
       <br>
@@ -9,7 +10,7 @@
         <span class="input-item">
            <i class="glyphicon glyphicon-user"></i>
          </span>
-        <input class="field" id="txt-input" type="text" placeholder="@UserName" required>
+        <input class="field" id="txt-input" type="text" placeholder="@UserName" name="username" required>
       </div>
       <br>
       <div class="container form-field">
@@ -23,5 +24,10 @@
         <input type="submit" class="btn button1" value="Login">
       </div>
     </form>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
   </div>
 {% endblock %}

@@ -20,17 +20,17 @@
   <body>
     <nav class="nav mynav" role="navigation" id="navbar">
       <div class="container">
-        <a class="navbar-brand mynav" href="#">Ami</a>
+        <a class="navbar-brand mynav" href="{% url 'index' %}">Ami</a>
         <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
           <li> <a href="#">Post</a> </li>
           <li> <a href="#">Groups</a> </li>
           <li> <a href="#">Create Group</a> </li>
-          <li> <a href="#">Logout</a> </li>
+          <li> <a href="{% url 'logout' %}">Logout</a> </li>
           {% else %}
           <li> <a href="#">Groups</a> </li>
-          <li> <a href="#">Log In</a> </li>
-          <li> <a href="#">Sign Up</a> </li>
+          <li> <a href="{% url 'login' %}">Log In</a> </li>
+          <li> <a href="{% url 'signup' %}">Sign Up</a> </li>
           {% endif %}
         </ul>
       </div>

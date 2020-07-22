@@ -1,7 +1,8 @@
 {% extends "Ami/base.html" %}
 {% block header_content %}
   <div class="container login-form header-div">
-    <form action="index.html" method="post">
+    <form action="{% url 'signup' %}" method="post">
+      {% csrf_token %}
       <h2>Create Your Account</h2>
       <h3>Enter a username and password of your choice.</h3>
       <br>
@@ -9,26 +10,33 @@
         <span class="input-item">
            <i class="glyphicon glyphicon-user"></i>
          </span>
-        <input class="field" id="txt-input" type="text" placeholder="Create UserName" required>
+        <input class="field" id="txt-input" type="text" placeholder="Create UserName" name="username" required>
       </div>
       <br>
       <div class="container form-field">
         <span class="input-item">
           <i class="glyphicon glyphicon-lock"></i>
         </span>
-        <input class="field" type="password" placeholder="Password" id="pwd"  name="password" required>
+        <input class="field" type="password" placeholder="Password" id="pwd"  name="password1" required>
       </div>
       <br>
       <div class="container form-field">
         <span class="input-item">
           <i class="glyphicon glyphicon-lock"></i>
         </span>
-        <input class="field" type="password" placeholder="Re-Enter Password" id="pwd"  name="password" required>
+        <input class="field" type="password" placeholder="Re-Enter Password" id="pwd"  name="password2" required>
       </div>
       <br>
       <div class="container form-field">
         <input type="submit" class="btn button1" value="Sign Up">
       </div>
     </form>
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
   </div>
+
 {% endblock %}
