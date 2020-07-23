@@ -42,3 +42,7 @@ input.field {
   background-color: rgb(199, 200, 190);
   color: rgb(14, 32, 55);
 }
+.alert {
+  width: 300px;
+  margin-left: 15px;
+}
