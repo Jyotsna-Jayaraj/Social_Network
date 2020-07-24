@@ -48,3 +48,14 @@ input.field {
   width: 300px;
   margin-left: 15px;
 }
+.closebtn {
+  margin-left: 15px;
+  font-weight: bold;
+  float: right;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 20px;
+}
+.closebtn:hover {
+  color: black;
+}
