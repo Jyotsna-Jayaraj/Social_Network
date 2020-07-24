@@ -25,16 +25,16 @@
 <div class="col-md-8">
   <div class="list-group">
 
-    {% for group in object_list %}
+    {% for group in groups %}
     <a href="#" class='list-group-item'>
-      <h3 class="title list-group-item-heading">{{group.name}}</h3>
+      <h3 class="title list-group-item-heading">{{ group.name }}</h3>
       <div class="list-group-item-text container-fluid">
-        {{group.description_html|safe}}
+        {{ group.description }}
         <div class="row">
 
           <div class="col-md-4">
-            <span class="badge">{{group.members.count}}</span>
-            member{{group.members.count|pluralize}}
+            <span class="badge">{{ group.members.count }}</span>
+            member{{ group.members.count|pluralize }}
           </div>
 
           <!-- <div class="col-md-4">
