@@ -2,7 +2,8 @@ body {
   background-color: rgb(199, 200, 190);
 }
 form h2 {
-  font-family: 'Grenze Gotisch', cursive;
+  font-family: 'Merriweather';
+  font-weight: 700;
 }
 #header {
   background-image: url("images/header.jpg");
@@ -22,7 +23,8 @@ form h2 {
 }
 #navbar *{
   color: rgb(14, 32, 55);
-  font-family: 'Grenze Gotisch';
+  font-family: 'Merriweather';
+  font-size: 18px;
 }
 input.field {
   width: 250px;
