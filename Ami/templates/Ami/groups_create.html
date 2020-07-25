@@ -1,7 +1,7 @@
 {% extends "Ami/groups_base.html" %}
 
 {% block group_content %}
-<h4>Create a new group!</h4>
+<h3>Create a new group!</h3>
   <form action="{% url 'create-group' %}" method="post" id="groupForm">
     {% csrf_token %}
     <label for="groupname"></label>
@@ -10,8 +10,8 @@
     <br>
     <label for="groupdesc"></label>
     <br>
-    <textarea id="groupdesc" name="groupdesc" rows="8" cols="80" required></textarea>
+    <textarea id="groupdesc" class="field" name="groupdesc" rows="8" cols="80" required></textarea>
     <br>
-    <input type="submit" class="btn btn-primary btn-large" value="Create">
+    <input id="groupformbtn" type="submit" class="btn btn-primary btn-large" value="Create">
   </form>
 {% endblock %}

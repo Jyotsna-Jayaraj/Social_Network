@@ -5,14 +5,19 @@ form h2 {
   font-family: 'Merriweather';
   font-weight: 700;
 }
-#header {
-  background-image: url("images/header.jpg");
+.jumbotron {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   width: auto;
   background-size: cover;
   color: rgb(199, 200, 190);
+}
+#header {
+  background-image: url("images/header.jpg");
+}
+#groups_header {
+  background-image: url("images/backdrop.jpg");
 }
 .header-div {
   width: 50%;
@@ -26,7 +31,7 @@ form h2 {
   font-family: 'Merriweather';
   font-size: 18px;
 }
-input.field {
+.field {
   width: 250px;
   padding: 5px 5px;
   margin: 8px 0;
@@ -37,7 +42,7 @@ input.field {
   padding-top: 10px;
   padding-bottom: 0;
 }
-.glyphicon {
+.loginglyph {
   top: 10px;
 }
 .button1 {
@@ -45,7 +50,7 @@ input.field {
   color: rgb(14, 32, 55);
 }
 .alert {
-  width: 300px;
+  width: 285px;
   margin-left: 15px;
 }
 .closebtn {
@@ -58,4 +63,13 @@ input.field {
 }
 .closebtn:hover {
   color: black;
+}
+#groupdesc {
+  width: 100%;
+}
+#groupformbtn {
+  margin-top: 20px;
+}
+.createbtn {
+  padding-bottom: 10px;
 }
