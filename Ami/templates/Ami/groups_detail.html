@@ -3,10 +3,10 @@
 {% block pre %}
 <div class="container">
   <h1>{{group.name}}</h1>
-  <h2>Member Count: {{group.members.count}}</h2>
+  <h2>Member Count: {{}}</h2>
 
   <div class="content">
-    {% if user in group.members.all %}
+    {% if user in group %}
       <a href="#" class='btn btn=lg btn-fill btn-warning'>
         <span class="glyphicon glyphicon-remove-circle"></span>Leave</a>
     {% else %}
