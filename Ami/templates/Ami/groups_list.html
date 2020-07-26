@@ -14,9 +14,9 @@
       <p>Welcome to the groups page!</p>
     </div>
       {% if user.is_authenticated %}
-      <a href="#" class="btn btn-md btn-fill btn-warning">
+      <a href="{% url 'create-group' %}" class="btn btn-md btn-fill btn-warning">
         <span class="glyphicon glyphicon-plus-sign createbtn"></span>
-        Creat New Group!
+        Create New Group!
       </a>
       {% endif %}
   </div>
@@ -27,7 +27,7 @@
   <div class="list-group">
 
     {% for group in groups %}
-    <a href="#" class='list-group-item'>
+    <a href="{% url 'view-group' slug=group.slug %}" class='list-group-item'>
       <h3 class="title list-group-item-heading">{{ group.name }}</h3>
       <div class="list-group-item-text container-fluid">
         {{ group.description }}

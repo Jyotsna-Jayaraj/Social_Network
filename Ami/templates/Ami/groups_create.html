@@ -13,5 +13,12 @@
     <textarea id="groupdesc" class="field" name="groupdesc" rows="8" cols="80" required></textarea>
     <br>
     <input id="groupformbtn" type="submit" class="btn btn-primary btn-large" value="Create">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+      {% endfor %}
+    {% endif %}
   </form>
 {% endblock %}

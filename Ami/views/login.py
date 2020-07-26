@@ -15,7 +15,7 @@ class Login(View):
 
 		if user is not None:
 			login(request, user)
-			return redirect('index')
+			return redirect('groups')
 		else:
 			messages.error(request, 'Invalid Credentials!')
 			return redirect('login')

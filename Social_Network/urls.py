@@ -25,5 +25,5 @@ urlpatterns = [
     path('logout', Logout.as_view(), name='logout'),
     path('create', CreateGroup.as_view(), name='create-group'),
     path('groups', Groups.as_view(), name='groups'),
-
+    path('group/<slug:slug>', ViewGroup.as_view(), name='view-group'),
 ]
