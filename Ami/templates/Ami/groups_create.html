@@ -1,6 +1,6 @@
 {% extends "Ami/groups_base.html" %}
 
-{% block group_content %}
+{% block content %}
 <h3>Create a new group!</h3>
   <form action="{% url 'create-group' %}" method="post" id="groupForm">
     {% csrf_token %}
