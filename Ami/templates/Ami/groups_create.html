@@ -1,24 +1,28 @@
 {% extends "Ami/_base.html" %}
 
 {% block content %}
-<h3>Create a new group!</h3>
-  <form action="{% url 'create-group' %}" method="post" id="groupForm">
-    {% csrf_token %}
-    <label for="groupname"></label>
+<div class="container">
+  <h3>Create a new group!</h3>
+    <form class="groupform" action="{% url 'create-group' %}" method="post" id="groupForm">
+      {% csrf_token %}
+      <label for="groupname"></label>
+      <br>
+      <input id="groupname" name="groupname" type="text" class="field" placeholder="Enter a Group Name" required>
+      <br>
+      <label for="groupdesc"></label>
+      <br>
+      <textarea id="groupdesc" class="field" name="groupdesc" rows="8" cols="80" required></textarea>
+      <br>
+      <input id="groupformbtn" type="submit" class="btn btn-primary btn-large" value="Create">
+    </form>
     <br>
-    <input id="groupname" name="groupname" type="text" class="field" placeholder="Enter a Group Name" required>
-    <br>
-    <label for="groupdesc"></label>
-    <br>
-    <textarea id="groupdesc" class="field" name="groupdesc" rows="8" cols="80" required></textarea>
-    <br>
-    <input id="groupformbtn" type="submit" class="btn btn-primary btn-large" value="Create">
     {% if messages %}
       {% for message in messages %}
-        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}
+        <div id="groupform" class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
         </div>
       {% endfor %}
     {% endif %}
-  </form>
+</div>
+
 {% endblock %}
