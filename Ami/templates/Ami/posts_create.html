@@ -1,0 +1,16 @@
+{% extends "Ami/_base.html" %}
+{% block content %}
+  <h4>Create a new Post</h4>
+  <form id="postForm" action="{% url 'posts:create' %}" method="post">
+      {% csrf_token %}
+      <input type="text" name="post-message" placeholder="Enter message for your post.">
+      <br>
+      <select class="btn btn-primary btn-large" name="groupnames">
+        {% for group in object_list %}
+          <option value="">{{ group.name }}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <input type="submit" class="btn btn-primary btn-large" value="Post">
+  </form>
+{% endblock %}
