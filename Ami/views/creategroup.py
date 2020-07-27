@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.db import IntegrityError
 
-from Ami.models import Group
+from Ami.models import Group, GroupMember
 
 class CreateGroup(View):
 	def get(self, request):
@@ -20,7 +20,10 @@ class CreateGroup(View):
 		try:
 			new_group = Group.objects.create(name=name, description=description, creator=request.user)
 			new_group.save()
-			messages.success(request, "Group Created!")
+
+			membership = GroupMember(group=new_group, user=request.user)
+			membership.save()
+
 			return redirect('view-group', new_group.slug)
 		except IntegrityError:
 			messages.error(request, "Group name already exists!")

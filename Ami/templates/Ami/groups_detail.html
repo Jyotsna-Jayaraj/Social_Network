@@ -3,16 +3,18 @@
 {% block pre %}
 <div class="container">
   <h1>{{ group.name }}</h1>
-  <h2>Member Count: {{ group.members.count }}</h2>
+  <h2>Member Count: {{ members|length }}</h2>
 
   <div class="content">
-    {% if user in group %}
-      <a href="#" class='btn btn=lg btn-fill btn-warning'>
-        <span class="glyphicon glyphicon-remove-circle"></span>Leave</a>
-    {% else %}
-    <a href="#" class='btn btn=lg btn-fill btn-warning'>
-      <span class="glyphicon glyphicon-ok-circle"></span>Join</a>
-    {% endif %}
+    <form action="{% url 'view-group' slug=group.slug %}" method="POST"> {% csrf_token %}
+      {% if user in members %}
+        <button class='btn btn=lg btn-fill btn-warning' name="leave" value="true">
+          <span class="glyphicon glyphicon-remove-circle"></span>Leave</a>
+      {% else %}
+      <button class='btn btn=lg btn-fill btn-warning' name="join" value="true">
+        <span class="glyphicon glyphicon-ok-circle"></span>Join</a>
+      {% endif %}
+    </form>
   </div>
 
 </div>

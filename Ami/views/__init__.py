@@ -5,3 +5,4 @@ from .logout import Logout
 from .creategroup import CreateGroup
 from .groups import Groups
 from .viewgroup import ViewGroup
+from .createpost import CreatePost
