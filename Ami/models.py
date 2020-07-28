@@ -32,3 +32,12 @@ class GroupMember(models.Model):
 
     class Meta:
         unique_together = ('group', 'user')
+
+class Post(models.Model):
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE)
+    group = models.ForeignKey(Group, related_name='posts', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "By " + self.user.username + " in " + self.group.name

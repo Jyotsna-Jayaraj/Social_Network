@@ -6,11 +6,11 @@
       {% csrf_token %}
       <label for="postmessage"></label>
       <br>
-      <textarea id="postmessage" class="field" placeholder="Enter message to post." rows="8" cols="180" required></textarea>
+      <textarea id="postmessage" class="field" name="message" placeholder="Enter message to post." rows="8" cols="180" required></textarea>
       <br>
       <label for="groupnames"></label>
       <br>
-      <select class="btn button2 dropbtn btn-lg" name="groupnames">
+      <select class="btn button2 dropbtn btn-lg" name="groupname">
         {% for group in groups %}
           <option>{{ group.name }}</option>
         {% endfor %}
