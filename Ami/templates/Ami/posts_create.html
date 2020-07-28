@@ -1,16 +1,22 @@
 {% extends "Ami/_base.html" %}
 {% block content %}
-  <h4>Create a new Post</h4>
-  <form id="postForm" action="{% url 'create-post' %}" method="post">
+<div class="container">
+  <h3>Create a new Post</h3>
+  <form id="postForm" action="{% url 'create-post' %}" method="post" id="groupForm">
       {% csrf_token %}
-      <input type="text" name="post-message" placeholder="Enter message for your post.">
+      <label for="postmessage"></label>
       <br>
-      <select class="btn btn-primary btn-large" name="groupnames">
+      <textarea id="postmessage" class="field" placeholder="Enter message to post." rows="8" cols="180" required></textarea>
+      <br>
+      <label for="groupnames"></label>
+      <br>
+      <select class="btn button2 dropbtn btn-lg" name="groupnames">
         {% for group in groups %}
-          <option value="">{{ group.name }}</option>
+          <option>{{ group.name }}</option>
         {% endfor %}
       </select>
       <br>
-      <input type="submit" class="btn btn-primary btn-large" value="Post">
+      <input id="formbtn" type="submit" class="btn button1" value="Post">
   </form>
+</div>
 {% endblock %}

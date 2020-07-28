@@ -14,7 +14,7 @@
       <p>Welcome to the groups page!</p>
     </div>
       {% if user.is_authenticated %}
-      <a href="{% url 'create-group' %}" class="btn btn-md btn-fill btn-warning">
+      <a href="{% url 'create-group' %}" class="btn btn-md button1">
         <span class="glyphicon glyphicon-plus-sign createbtn"></span>
         Create New Group!
       </a>
@@ -33,10 +33,10 @@
         {{ group.description }}
         <div class="row">
 
-          <!-- <div class="col-md-4">
-            <span class="badge">{{ group.users.count }}</span>
-            member{{ group.users.count|pluralize }}
-          </div> -->
+          <div class="col-md-4">
+            <span class="badge">{{ members|length }}</span>
+            member{{ members|length|pluralize }}
+          </div>
 
           <!-- <div class="col-md-4">
             <span class="badge">{{group.posts.count}}</span>
