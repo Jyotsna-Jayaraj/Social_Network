@@ -1,7 +1,7 @@
 from django.views import View
 from django.shortcuts import render, redirect
 
-from Ami.models import Group, GroupMember
+from Ami.models import Group, GroupMember, Post
 
 class ViewGroup(View):
 	def get(self, request, slug):
@@ -20,6 +20,11 @@ class ViewGroup(View):
 		elif 'leave' in request.POST:
 			membership = GroupMember.objects.get(group=group, user=user)
 			membership.delete()
+			return redirect('view-group', group.slug)
+		elif 'delete' in request.POST:
+			post_id = request.POST.get('delete')
+			post = Post.objects.get(pk=post_id)
+			post.delete()
 			return redirect('view-group', group.slug)
 		else:
 			print("Invalid Request")
