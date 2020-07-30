@@ -10,10 +10,10 @@
       {% csrf_token %}
       <br>
       {% if user in members %}
-      <button class='btn button2 btn-lg' name="leave" value="true">
+      <button class='btn button1 btn-lg' name="leave" value="true">
         <span class="glyphicon glyphicon-remove-circle"></span>Leave</a>
       {% else %}
-      <button class='btn button2 btn-lg' name="join" value="true">
+      <button class='btn button1 btn-lg' name="join" value="true">
         <span class="glyphicon glyphicon-ok-circle"></span>Join</a>
       {% endif %}
     </form>
@@ -23,15 +23,40 @@
 {% endblock %}
 
 {% block content %}
-{% comment %}
-  <!-- <div class="col-md-8">
+  <div class="post col-md-8">
     {% if group.posts.count == 0 %}
       <h2>No posts in this group yet!</h2>
     {% else %}
       {% for post in group.posts.all %}
-        {% include "Ami/_posts.html" %}
+      <div class="col-md-8">
+        <div class="list-group">
+          <div class="post media">
+            <h3>{{post.message|safe}}</h3>
+            <div class="media-body">
+              <h5>
+                <span class="username">
+                  <a href="#">@{{ post.user.username }},</a>
+                </span>
+                <time class="time"><a href="#">{{ post.created_at }}</a></time>
+                {% if post.group %}
+                <span class="group-name">in
+                  <a href="{% url 'view-group' slug=group.slug %}">{{ post.group.name }}</a>
+                </span>
+                {% endif %}
+              </h5>
+              <div class="media-footer">
+                {% if user.is_authenticated and post.user == user %}
+                <a href="#" title="delete" class="btn btn-simple">
+                  <span class="glyphicon glyphicon-remove text-danger" aria-hidden='true'></span>
+                  <span class="text-danger icon-label">Delete</span>
+                </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       {% endfor %}
     {% endif %}
-  </div> -->
-{% endcomment %}
+  </div>
 {% endblock %}

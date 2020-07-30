@@ -81,3 +81,9 @@ form h2 {
 .createbtn {
   padding-bottom: 10px;
 }
+.post {
+  background: rgb(251, 252, 249);
+  color: rgb(14, 32, 55);
+  margin: 20px 20px;
+  border-radius: 5px;
+}

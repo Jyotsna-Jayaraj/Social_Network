@@ -10,13 +10,13 @@
       <br>
       <label for="groupnames"></label>
       <br>
-      <select class="btn button2 dropbtn btn-lg" name="groupname">
+      <select class="btn button2 dropbtn btn-md" name="groupname">
         {% for group in groups %}
           <option>{{ group.name }}</option>
         {% endfor %}
       </select>
       <br>
-      <input id="formbtn" type="submit" class="btn button1" value="Post">
+      <input id="formbtn" type="submit" class="btn button1 btn-lg" value="Post">
   </form>
 </div>
 {% endblock %}
